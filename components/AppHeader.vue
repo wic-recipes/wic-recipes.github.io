@@ -6,48 +6,17 @@
           <HomeModernIcon class="size-6" />
         </NuxtLink>
       </div>
-      <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
-          <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="size-6" aria-hidden="true" />
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <NuxtLink v-for="item in navigation" :key="item.name" :to="item.page" class="text-sm/6 font-semibold text-gray-900">{{ item.name }}</NuxtLink>
+      <div class="flex">
+        <NuxtLink to="/recipes" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open recipe menu</span>
+          <ListBulletIcon class="size-6" />
+        </NuxtLink>
       </div>
     </nav>
-    <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-      <div class="fixed inset-0 z-10" />
-      <DialogPanel class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <HomeModernIcon class="size-6" />
-          </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
-            <span class="sr-only">Close menu</span>
-            <XMarkIcon class="size-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <NuxtLink v-for="item in navigation" :key="item.name" :to="item.page" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.name }}</NuxtLink>
-            </div>
-          </div>
-        </div>
-      </DialogPanel>
-    </Dialog>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { Dialog, DialogPanel } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon, HomeModernIcon } from '@heroicons/vue/24/outline'
+import { ListBulletIcon, HomeModernIcon } from '@heroicons/vue/24/outline'
 
-const navigation = [
-  { name: 'Recipes', page: '/recipes' }
-]
-
-const mobileMenuOpen = ref(false)
 </script>
