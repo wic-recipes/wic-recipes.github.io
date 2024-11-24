@@ -1,7 +1,7 @@
 import { CATEGORIES } from './recipeCategories'
 import type { Recipe } from '../types'
 
-export const recipes: Recipe = [
+export const recipes: Recipe[] = [
   {
     id: "hidden-veggie-pasta",
     title: "Hidden Veggie Pasta",
@@ -207,11 +207,11 @@ export const recipes: Recipe = [
       "Once mixture is thick (sticks to the back of the spatula), reduce heat to low and add cheese. Whisk until cheese is melted and mixture is smooth. Taste and add more salt/seasoning if desired.",
     ],
     ingredients: [
-      "*8 oz whole wheat maccaroni",
+      "*8 oz whole wheat macaroni",
       "2 tablespoons salted butter",
       "2 tablespoons all purpose flour",
       "1/2 teaspoon sea salt",
-      "1/4 teapsoon garlic powder",
+      "1/4 teaspoon garlic powder",
       "*1 cup whole milk",
       "*1/4 cup greek yogurt",
       "*8 oz shredded cheddar cheese (2 cups)",
@@ -432,6 +432,123 @@ export const recipes: Recipe = [
     notes: [
       "For softer oats with more liquid, use 1/2 cup of milk instead of 1/3.",
       "Yogurt is a great addition for creamier oats.",
+    ]
+  },
+  {
+    id: "veggie-and-bean-breakfast-hash",
+    title: "Veggie and Bean Breakfast Hash",
+    category: CATEGORIES.BREAKFAST,
+    imageExtension: "jpg",
+    servings: "4",
+    source: "Karissa's Vegan Kitchen",
+    time: "50 minutes",
+    directions: [
+      {
+        title: "Skillet Method",
+        steps: [
+          "Add the potatoes and oil to a large skillet on medium heat. Toss with salt and pepper. ",
+          "Saute the potatoes until tender and browned (about 25 minutes). Toss every 5 minutes or so. ",
+          "Add the remaining ingredients into the skillet except for the beans and spinach. Saute until the vegetables are tender (about 10 minutes) ",
+          "Toss in the beans and spinach. Saute for an additional 3-4 minutes, or until the spinach is wilted.",
+        ]
+      },
+      {
+        title: "Baked Method",
+        steps: [
+          "Preheat the oven to 425°F.",
+          "Toss the potatoes with oil, salt, and pepper. Spread out on a parchment lined or non stick baking sheet. Let the potatoes bake for 25 minutes",
+          "In a separate baking dish or cast iron pan, mix the remaining veggies, beans, and spices together. Put the baking dish in the oven next to the potatoes and continue to bake both for 15 minutes. Toss the potatoes about halfway through.",
+          "Stir the potatoes in with the veggies and beans, season with more salt and pepper if desired, and serve. ",
+        ]
+      }
+    ],
+    ingredients: [
+      "*3 large russet potatoes, peeled and cubed",
+      "2 teaspoons oil",
+      "1/2 teaspoon salt",
+      "1/4 teaspoon black pepper",
+      "*1 can beans, drained and rinsed",
+      "*2 cups baby spinach",
+      "*1 medium zucchini, chopped",
+      "*1 medium squash, chopped",
+      "*1 red bell pepper, chopped",
+      "*1/2 cup mushrooms, sliced",
+      "1 1/2 teaspoon garlic powder",
+      "1 1/2 teaspoon onion powder",
+      "1/2 teaspoon paprika",
+      "pinch chili flakes",
+    ]
+  },
+  {
+    id: "quick-and-easy-pasta-salad",
+    title: "Quick and Easy Pasta Salad",
+    category: CATEGORIES.SALADS,
+    imageExtension: "jpg",
+    servings: "10",
+    source: "Inspired Taste",
+    time: "20 minutes",
+    directions: [
+      "Bring a large pot of salted water to a boil. Add pasta and cook until tender, 6 to 10 minutes. Drain and rinse well under cold water.",
+      "While the pasta cooks, make the dressing in the bottom of a large bowl. Whisk the wine vinegar, salt, pepper, oregano, and olive oil until blended. Add the drained pasta to the dressing and mix well.",
+      "Stir in the bell pepper, zucchini, tomatoes scallions, pepperoncini (if using), olives, parmesan, mozzarella, and herbs (if using). Taste for seasoning and adjust with salt and pepper as needed. Serve, or for the best results, cover and refrigerate for at least 30 minutes and up to 5 days.",
+    ],
+    ingredients: [
+      "*1 pound of dried whole wheat pasta like fusilli, penne, rotini, or farfalle",
+      "*1 cup sliced bell pepper, (1 medium)",
+      "*1 cup thinly sliced zucchini (1/2 medium)",
+      "*1 cup halved cherry tomatoes",
+      "*1/3 cup thinly sliced green onions (5 to 6 green onions)",
+      "1/4 cup sliced pepperoncini or banana peppers (optional)",
+      "1 cup (4 oz) halved mixed olives",
+      "*1 cup (2 oz) grated parmesan cheese (or other hard cheese)",
+      "*1 cup (6 oz) mozzarella balls, chopped",
+      "*1/3 cup fresh parsley or basil (optional)",
+    ],
+    sauceIngredients: [
+      "1/3 cup red wine vinegar or white wine vinegar",
+      "1/2 teaspoon salt, plus more to taste ",
+      "1/2 teaspoon black pepper",
+      "1/2 teaspoon dried oregano ",
+      "1/2 cup olive oil ",
+    ],
+    sauceTitle: "Dressing"
+  },
+  {
+    id: "rainbow-peanut-noodles",
+    title: "Rainbow Peanut Noodles",
+    category: CATEGORIES.PASTAS,
+    imageExtension: "webp",
+    servings: "8",
+    source: "Healthy Girl Kitchen",
+    time: "20 minutes",
+    directions: [
+      "Boil water and cook pasta.",
+      "While pasta cookies, prep veggies. Microwave frozen edamame for 3 minutes or until cooked.",
+      "Whisk sauce ingredients together in a bowl.",
+      "Add the pasta, veggies, and sauce to a large serving bowl. Use tongs to toss. Sprinkle with sesame seeds.",
+      "Enjoy!",
+    ],
+    ingredients: [
+      "*16 oz whole wheat thin spaghetti",
+      "*1 cup shredded purple cabbage",
+      "*1 cup carrot ribbons",
+      "*1 cup baby spinach",
+      "*1.5 cups red bell pepper sliced thin",
+      "*1 cup frozen shelled edamame",
+      "*1/2 cup chopped cilantro",
+      "sesame seeds garnish (optional)",
+    ],
+    sauceTitle: "Peanut Sauce",
+    sauceIngredients: [
+      "*1/2 cup peanut butter",
+      "2 tsp sriracha",
+      "4 tbsp soy sauce",
+      "3 tbsp rice vinegar",
+      "1/4 cup water",
+      "1 tbsp maple syrup, or brown sugar",
+      "1 tbsp sesame oil (or olive oil)",
+      "1 tsp garlic powder",
+      "1 tsp ginger powder",
     ]
   },
 ]

@@ -72,7 +72,17 @@
     <!-- Directions -->
     <div class="mt-8">
       <h2 class="text-lg font-medium">Directions</h2>
-      <ul role="list" class="divide-y divide-stone-200">
+      <div v-if="hasSections && recipe.directions?.[0]?.title">
+        <section v-for="section in recipe.directions" :key="section.title">
+          <h3 class="mt-4">{{ section.title }}</h3>
+          <ul role="list" class="divide-y divide-stone-200">
+            <li v-for="(step, index) in section.steps" :key="step" class="px-4 py-4 sm:px-0">
+              {{ index+1 }}. {{ step }}
+            </li>
+          </ul>
+        </section>
+      </div>
+      <ul v-else role="list" class="divide-y divide-stone-200">
         <li v-for="(step, index) in recipe.directions" :key="step" class="px-4 py-4 sm:px-0">
           {{ index+1 }}. {{ step }}
         </li>
@@ -87,4 +97,6 @@ import type { Recipe } from '@/types'
 import { ClockIcon, UsersIcon } from '@heroicons/vue/24/outline'
 
 const recipe: Recipe = getRecipe(route.params.id)
+
+const hasSections: Boolean = typeof recipe.directions[0] !== 'string'
 </script>
