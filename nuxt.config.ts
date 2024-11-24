@@ -29,5 +29,9 @@ export default defineNuxtConfig({
     }
   },
 
+  app: {
+    baseURL: '/',
+  },
+
   modules: ['@nuxt/image'],
 })
