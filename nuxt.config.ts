@@ -5,12 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.scss'],
   devtools: { enabled: true },
-  ssr: true,
-  // hooks: {
-  //   'prerender:routes': (routes) => {
-  //     // maybe this is necessary?
-  //   }
-  // },
+  ssr: false,
+  hooks: {
+    'prerender:routes': (routes) => {
+      // maybe this is necessary?
+    }
+  },
 
   postcss: {
     plugins: {
