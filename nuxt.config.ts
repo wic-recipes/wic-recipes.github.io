@@ -2,10 +2,13 @@
 const path = require('path')
 
 export default defineNuxtConfig({
-  target: 'static',
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
+
+  app: {
+    buildAssetsDir: '/_nuxt/',
+  },
 
   postcss: {
     plugins: {
