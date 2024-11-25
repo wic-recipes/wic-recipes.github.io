@@ -3,11 +3,13 @@ const path = require('path')
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.scss'],
   devtools: { enabled: true },
 
-  app: {
-    buildAssetsDir: '/_nuxt/',
+  hooks: {
+    'prerender:routes': (routes) => {
+      // maybe this is necessary?
+    }
   },
 
   postcss: {
@@ -31,10 +33,6 @@ export default defineNuxtConfig({
     output: {
       publicDir: path.join(__dirname, 'docs/')
     }
-  },
-
-  app: {
-    baseURL: '/',
   },
 
   modules: ['@nuxt/image'],
