@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/docs/',
+    baseURL: '/',
   },
 
   modules: ['@nuxt/image'],
