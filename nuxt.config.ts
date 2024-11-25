@@ -36,4 +36,8 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image'],
+
+  app: {
+    buildAssetsDir: '/_nuxt/', // Default Nuxt assets path
+  },
 })
