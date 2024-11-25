@@ -3,6 +3,11 @@ export type RecipeDirectionsSection = {
   steps: string[]
 }
 
+export type RecipeIngredientsSection = {
+  title: string,
+  items: string[]
+}
+
 export type Recipe = {
   id: string,
   title: string,
@@ -12,7 +17,7 @@ export type Recipe = {
   source: string,
   time: string,
   directions: string[] | RecipeDirectionsSection[],
-  ingredients: string[],
+  ingredients: string[] | RecipeIngredientsSection[],
   sauceTitle?: string,
   sauceIngredients?: string[],
   optionalToppings?: string[],

@@ -1,8 +1,9 @@
 export const CATEGORIES = {
   BREAKFAST: 'Breakfast',
+  ENTREES: 'Entrées',
   PASTAS: 'Pastas',
   SALADS: 'Salads',
   SANDWICHES: 'Sandwiches',
-  SOUPS: 'Soups',
-  TACOS: 'Tacos',
+  SNACKS: 'Snacks and Desserts',
+  SOUPS: 'Soups'
 }

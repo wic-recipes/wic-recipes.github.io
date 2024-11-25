@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+  <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold tracking-tight">{{ recipe.title }}</h1>
 
     <div class="mt-4 border-b border-stone-200 pb-5 text-sm sm:flex sm:justify-between">
@@ -25,7 +25,23 @@
               <div class="flex flex-col">
                 <div class="mb-6">
                   <dt class="text-lg font-medium">Ingredients</dt>
-                  <dd class="mt-3 space-y-3">
+                  <dd
+                    v-if="hasIngredientSections"
+                    class="mt-3 space-y-3"
+                  >
+                    <section v-for="section in recipe.ingredients" :key="section.title">
+                      <h3 class="mt-4 uppercase">{{ section.title }}</h3>
+                      <ul role="list" class="py-4">
+                        <li v-for="item in section.items" :key="step" class="px-4 sm:px-0">
+                          {{ item }}
+                        </li>
+                      </ul>
+                    </section>
+                  </dd>
+                  <dd
+                    v-else
+                    class="mt-3 space-y-3"
+                  >
                     <p v-for="ingredient in recipe.ingredients">{{ ingredient }}</p>
                   </dd>
                 </div>
@@ -72,9 +88,9 @@
     <!-- Directions -->
     <div class="mt-8">
       <h2 class="text-lg font-medium">Directions</h2>
-      <div v-if="hasSections && recipe.directions?.[0]?.title">
+      <div v-if="hasDirectionSections">
         <section v-for="section in recipe.directions" :key="section.title">
-          <h3 class="mt-4">{{ section.title }}</h3>
+          <h3 class="mt-4 uppercase">{{ section.title }}</h3>
           <ul role="list" class="divide-y divide-stone-200">
             <li v-for="(step, index) in section.steps" :key="step" class="px-4 py-4 sm:px-0">
               {{ index+1 }}. {{ step }}
@@ -98,5 +114,6 @@ import { ClockIcon, UsersIcon } from '@heroicons/vue/24/outline'
 
 const recipe: Recipe = getRecipe(route.params.id)
 
-const hasSections: Boolean = typeof recipe.directions[0] !== 'string'
+const hasDirectionSections: Boolean = typeof recipe.directions?.[0] !== 'string'
+const hasIngredientSections: Boolean = typeof recipe.ingredients?.[0] !== 'string'
 </script>

@@ -36,5 +36,9 @@ import { ChevronRightIcon } from '@heroicons/vue/20/solid'
 
 const getImagePath = (recipeId: string, extension:string) => `/img/${recipeId}.${extension}`
 
-const categoryRecipes = (category: string) => recipes.filter(r => r.category === category)
+const categoryRecipes = (category: string) => recipes.filter(r => r.category === category).sort((a, b) => {
+  if (a.id < b.id) return -1
+  else if (a.id > b.id) return 1
+  return 0
+})
 </script>
