@@ -2,15 +2,10 @@
 const path = require('path')
 
 export default defineNuxtConfig({
+  target: 'static',
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
-
-  hooks: {
-    'prerender:routes' ({ routes }) {
-      // routes.clear() // Do not generate any routes (except the defaults)
-    }
-  },
 
   postcss: {
     plugins: {
