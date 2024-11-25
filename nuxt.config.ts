@@ -2,7 +2,6 @@
 const path = require('path')
 
 export default defineNuxtConfig({
-  target: 'static',
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
@@ -31,7 +30,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/',
+    baseURL: '/docs/',
   },
 
   modules: ['@nuxt/image'],
